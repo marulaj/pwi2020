@@ -1,0 +1,20 @@
+<h2>Listado de artistas</h2>
+
+<a href="/alta" class="btn btn-primary">Agregar artista</a>
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th></th>
+    </tr>
+    <!-- Por cada listado de artistas que tengo, con el each se recorre todo el json -->
+    {{#each listado}}
+    <tr>
+        <td> {{this.nombre}} </td>
+        <td> {{this.apellido}} </td>
+        <td><a href="/borrar/{{this._id}}"> Borrar </a> <!-- hace un get a /borrar y borra el id que yo quiero -->
+            <a href="/editar/{{this._id}}"> Editar </a> 
+        </td>
+    </tr>
+    {{/each}}
+</table>
